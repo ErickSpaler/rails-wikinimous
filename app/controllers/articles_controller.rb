@@ -23,8 +23,7 @@ class ArticlesController < ApplicationController
   end
 
   def update
-    raise
-    @article = Article.update(article_params)
+    @article.update(article_params)
     redirect_to article_path(@article)
   end
 
@@ -40,6 +39,6 @@ class ArticlesController < ApplicationController
   end
 
   def article_params
-    params.require(:article).permit(:title, :content)
+    params.require(:article).permit(:id, :title, :content)
   end
 end
